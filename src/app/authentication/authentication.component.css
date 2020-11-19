@@ -1,0 +1,19 @@
+.para-space {
+    margin: 0px 10px 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mat-form-field-group {
+    margin-top: 10%;
+}
+
+.google-btn {
+    min-height: 50px;
+}
+
+.facebook-btn {
+    min-height: 50px;
+}
