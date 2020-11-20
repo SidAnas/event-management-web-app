@@ -3,7 +3,8 @@
     <div fxLayout="row wrap">
         <img src="../../assets/images/auth-form-curve__img.png" fxFlex="100" alt="">
         <h1 [ngStyle]="{'font-weight': 'bold'}" fxFlexOffset="10%" fxFlex="100">{{exist ? 'Sign In' : 'Sign Up'}}</h1>
-        <p [ngStyle]="{'font-size.px': '15', 'margin-top.px': '-10'}" fxFlexOffset="10%">{{exist ? 'Sign In' : 'Sign Up'}} with</p>
+        <p [ngStyle]="{'font-size.px': '15', 'margin-top.px': '-10'}" fxFlexOffset="10%">{{exist ? 'Sign In' : 'Sign Up'}} with
+        </p>
     </div>
 
     <div class="signUp" *ngIf="!exist">
@@ -51,6 +52,8 @@
         </div>
 
         <div fxLayout="column" fxLayoutAlign="space-evenly none">
+
+
             <p fxFlexAlign="center" class="para-space">
                 Creating an account means you're okay with <br> our <a href="#">Terms of Service</a> and our <a href="#">Privacy
           Policy</a>
@@ -105,6 +108,115 @@
             </p>
         </div>
 
+    </div>
+
+</section>
+
+<section id="sm" fxHide.xs fxHide.gt-sm fxShow.sm>
+    <div fxLayout="row wrap">
+        <img src="../../assets/images/auth-form-curve__img-sm.png" fxFlex="100" alt="">
+        <h1 [ngStyle]="{'font-weight': 'bold'}" fxFlexOffset="10%" fxFlex="100">{{exist ? 'Sign In' : 'Sign Up'}}</h1>
+        <p [ngStyle]="{'font-size.px': '15', 'margin-top.px': '-10'}" fxFlex="100" fxFlexOffset="10%">
+            {{exist ? 'Sign In' : 'Sign Up'}} with</p>
+    </div>
+
+    <div class="signUp" *ngIf="!exist">
+        <div fxLayout="row" [ngStyle]="{'margin-right': '10%', 'margin-left': '10%'}" fxLayoutAlign="space-evenly center" fxLayoutGap="5%">
+            <button mat-stroked-button color="primary" fxFlex="calc(40% - 5%)">
+        <img src="../../assets/images/google-logo.png" height="15px" alt="">
+        Sign Up with Google
+      </button>
+            <button mat-stroked-button color="primary" fxFlex="calc(40% - 5%)">
+        <img src="../../assets/images/facebook-logo.png" height="15px" alt="">
+        Sign Up with Facebook
+      </button>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5%" [ngStyle]="{'margin-right': '10%', 'margin-left': '10%', 'margin-top': '5%'}">
+
+            <mat-form-field appearance="outline" fxFlex="calc(40% - 5%)">
+                <mat-icon matSuffix>person</mat-icon>
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Saygin Yalcin">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex="calc(40% - 5%)">
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-label>Phone Number</mat-label>
+                <input matInput type="number">
+            </mat-form-field>
+
+        </div>
+        <div fxLayout="row" fxLayoutGap="5%" [ngStyle]="{'margin-right': '10%', 'margin-left': '10%'}">
+
+            <mat-form-field appearance="outline" fxFlex="calc(40% - 5%)">
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ex. saygin@gmail.com">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex="calc(40% - 5%)">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+            </mat-form-field>
+        </div>
+        <!-- <mat-checkbox color="primary"></mat-checkbox> -->
+        <div fxLayout="column" fxLayoutAlign="space-evenly none">
+
+
+            <p [ngStyle]="{'margin-right': '10%', 'margin-left': '10%'}" class="para-space">
+                Creating an account means you're okay with our <a href="#">Terms of Service</a> and our <a href="#">Privacy
+          Policy</a>
+            </p>
+            <p [ngStyle]="{'margin-right': '10%', 'margin-left': '10%'}">
+                <button fxFlex="45" mat-raised-button color="primary">Create an Account</button>
+            </p>
+            <p [ngStyle]="{'margin-top.px': '5','margin-right': '10%', 'margin-left': '10%'}">
+                Already have an account? <a href="#" (click)="exist =! exist">Sign In</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="signIn" *ngIf="exist">
+        <div fxLayout="row" [ngStyle]="{'margin-right': '10%', 'margin-left': '10%'}" fxLayoutAlign="space-evenly center" fxLayoutGap="5%">
+            <button mat-stroked-button color="primary" fxFlex="calc(40% - 5%)">
+        <img src="../../assets/images/google-logo.png" height="15px" alt="">
+        Sign In with Google
+      </button>
+            <button mat-stroked-button color="primary" fxFlex="calc(40% - 5%)">
+        <img src="../../assets/images/facebook-logo.png" height="15px" alt="">
+        Sign In with Facebook
+      </button>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5%" [ngStyle]="{'margin-right': '10%', 'margin-left': '10%', 'margin-top': '5%'}">
+
+            <mat-form-field appearance="outline" fxFlex="calc(40% - 5%)">
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ex. saygin@gmail.com">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex="calc(40% - 5%)">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide">
+<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+</button>
+            </mat-form-field>
+        </div>
+        <p>
+            <a href="#" fxFlexOffset="75%">Forgot Password?</a>
+        </p>
+        <div fxLayout="column" fxLayoutAlign="space-evenly none" [ngStyle]="{'margin-top.px': '10','margin-right': '10%', 'margin-left': '10%'}">
+            <p>
+                <button fxFlex="45" mat-raised-button color="primary">Sign In</button>
+            </p>
+            <p [ngStyle]="{'margin-top.px': '10'}">
+                Don't have an account. <a href="#" (click)="exist =! exist">Sign Up</a>
+            </p>
+        </div>
     </div>
 
 </section>
