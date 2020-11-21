@@ -17,3 +17,16 @@ a {
 .facebook-btn {
     min-height: 50px;
 }
+
+h1 {
+    font-family: 'Vollkorn', serif;
+    font-size: 2rem;
+    color: #303033;
+}
+
+.optn-auth {
+    font-family: 'Vollkorn', serif;
+    font-size: 15px;
+    margin-top: -8px;
+    color: #3c3c42;
+}

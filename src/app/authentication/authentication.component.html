@@ -1,9 +1,8 @@
 <section id="xs" fxHide.gt-xs fxShow.lt-sm>
-
     <div fxLayout="row wrap">
         <img src="../../assets/images/auth-form-curve__img.png" fxFlex="100" alt="">
         <h1 [ngStyle]="{'font-weight': 'bold'}" fxFlexOffset="10%" fxFlex="100">{{exist ? 'Sign In' : 'Sign Up'}}</h1>
-        <p [ngStyle]="{'font-size.px': '15', 'margin-top.px': '-10'}" fxFlexOffset="10%">{{exist ? 'Sign In' : 'Sign Up'}} with
+        <p class="optn-auth" fxFlexOffset="10%">{{exist ? 'Sign In' : 'Sign Up'}} with
         </p>
     </div>
 
@@ -112,11 +111,11 @@
 
 </section>
 
-<section id="sm" fxHide.xs fxHide.gt-sm fxShow.sm>
+<section id="sm" fxHide.xs fxShow.gt-xs>
     <div fxLayout="row wrap">
         <img src="../../assets/images/auth-form-curve__img-sm.png" fxFlex="100" alt="">
         <h1 [ngStyle]="{'font-weight': 'bold'}" fxFlexOffset="10%" fxFlex="100">{{exist ? 'Sign In' : 'Sign Up'}}</h1>
-        <p [ngStyle]="{'font-size.px': '15', 'margin-top.px': '-10'}" fxFlex="100" fxFlexOffset="10%">
+        <p class="optn-auth" fxFlex="100" fxFlexOffset="10%">
             {{exist ? 'Sign In' : 'Sign Up'}} with</p>
     </div>
 
