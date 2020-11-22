@@ -1,2 +1,10 @@
 <!-- {{title | uppercase}} -->
-<app-authentication></app-authentication>
+<app-authentication fxHide.gt-sm></app-authentication>
+
+
+<div fxLayout="row">
+    <div fxFlex="45">
+        <img src="../assets/images/auth-event-img.png" fxFlex="100" alt="">
+    </div>
+    <app-authentication fxShow-gt-sm fxFlex="55"></app-authentication>
+</div>
