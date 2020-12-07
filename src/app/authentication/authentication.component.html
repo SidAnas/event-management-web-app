@@ -69,7 +69,7 @@
 
     <div class="signIn" *ngIf="exist">
         <div [ngStyle]="{'margin-top.px': '10'}" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5%">
-            <button class="google-btn" mat-raised-button fxFlexOffset="12%">
+            <button class="google-btn" mat-raised-button fxFlexOffset="12%" (click)="signInWithGoogle()">
         <img src="../../assets/images/google-logo.png" height="20px" alt="">
       </button>
             <button class="facebook-btn" mat-raised-button>
@@ -180,7 +180,7 @@
 
     <div class="signIn" *ngIf="exist">
         <div fxLayout="row" [ngStyle]="{'margin-right': '10%', 'margin-left': '10%'}" fxLayoutAlign="space-evenly center" fxLayoutGap="5%">
-            <button mat-stroked-button color="primary" fxFlex="calc(40% - 5%)">
+            <button mat-stroked-button color="primary" fxFlex="calc(40% - 5%)" (click)="signInWithGoogle()">
         <img src="../../assets/images/google-logo.png" height="15px" alt="">
         Sign In with Google
       </button>
@@ -290,7 +290,7 @@
 
         <div class="signIn" *ngIf="exist">
             <div fxLayout="row" [ngStyle]="{'margin-right': '10%', 'margin-left': '10%'}" fxLayoutAlign="space-evenly center" fxLayoutGap="5%">
-                <button mat-stroked-button color="primary" fxFlex="calc(40% - 5%)">
+                <button mat-stroked-button color="primary" fxFlex="calc(40% - 5%)" (click)="signInWithGoogle()">
         <img src="../../assets/images/google-logo.png" height="15px" alt="">
         Sign In with Google
       </button>
@@ -328,4 +328,20 @@
             </div>
         </div>
     </mat-card>
+</section>
+
+<section *ngIf="user">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ user.name }}</mat-card-title>
+            <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ user.photoUrl }}">
+        <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button (click)="signOut()">Logout</button>
+        </mat-card-actions>
+    </mat-card>
+
 </section>

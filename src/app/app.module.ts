@@ -8,6 +8,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 import { AuthenticationComponent } from './authentication/authentication.component';
 
+
+import { SocialLoginModule } from 'angularx-social-login';
+import { SocialAuthServiceConfig, GoogleLoginProvider  } from 'angularx-social-login';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +23,25 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '918825257786-qv6k846lssfgq5is7g07okblsp8ua51k.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
